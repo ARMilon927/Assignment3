@@ -24,10 +24,7 @@ namespace CoffeeShopUI
         private string[] coffeeOrder = new string[size];
         private int[] price = new int[size];
         private int[] quantity = new int[size];
-        private string purchase = "\t\tPurchase Information\n\n\n";
-
         private string message;
-        //string[] customerPurchaseInformation = new string[10];
         private int index = 0;
 
         private void saveButton_Click(object sender, EventArgs e)
@@ -54,7 +51,6 @@ namespace CoffeeShopUI
                 else
                     price[index] = 80;
 
-
                 message = "\t\tCustomer No : " + Convert.ToInt16(index+1) + "\n\n";
                 message = message + "Customer Name \t: " + customerName[index] + "\n";
                 message = message + "Contact No \t\t: " + contactNumber[index] + "\n";
@@ -62,14 +58,11 @@ namespace CoffeeShopUI
                 message = message + "Coffee ordered \t: " + coffeeOrder[index] + "\n";
                 message = message + "Price per item \t\t: " + price[index] + "\n";
                 message = message + "Quantity \t\t: " + quantity[index] + "\n\n";
-
                 message = message + customerName[index] + " sir, you have to pay " + price[index] * quantity[index] + " Taka" + "\n\n";
 
                 MessageBox.Show("Purchase successful.");
-                
-                    purchaseInformationRichTextBox.Text += message;
-                
-                
+
+                purchaseInformationRichTextBox.Text += message;
                 index++;
             }
         }
